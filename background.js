@@ -10,6 +10,18 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       // Check if URL already exists in visitedSites
       if (visitedSites.has(tab.url)) {
         console.warn(`Warning: URL ${tab.url} has already been visited`);
+
+        // Show Chrome notification
+        chrome.notifications.create({
+          type: 'basic',
+          iconUrl: 'icon48.png',  // Make sure you have an icon file in your extension
+          title: 'Repeat Visit Detected',
+          message: `You have already visited this website`,
+          priority: 1
+        });
+
+        console.warn(`notification done: URL ${tab.url} has already been visited`);
+
         return; // Don't proceed further if URL exists
       }
 
