@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>History Tracker</title>
+  <style>
+    body {
+      width: 400px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+    .site-entry {
+      padding: 5px;
+      border-bottom: 1px solid #eee;
+    }
+    .timestamp {
+      color: #666;
+      font-size: 0.8em;
+    }
+    .clear-btn {
+      margin-top: 10px;
+      padding: 5px 10px;
+      background: #ff4444;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Visited Sites</h2>
+  <div id="history-list"></div>
+  <button id="clearHistory" class="clear-btn">Clear History</button>
+  <script src="popup.js"></script>
+</body>
+</html>
